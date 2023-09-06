@@ -1,7 +1,7 @@
 .navbar{
     width: 2.5rem !important;
     height: 20rem;
-    background-color: #e8e8e8;
+    background-color: var(--navBg);
     border-radius: 0.3rem;
     justify-content: space-evenly;
     position: absolute;
