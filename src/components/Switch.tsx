@@ -1,21 +1,30 @@
 import React, {useState, useEffect} from 'react';
-import './css/Switch.css';
 import { useTheme } from 'next-themes';
 
 const Switch = () => {
 
-  const [theme, setTheme] = useState(undefined);
+    const {theme, setTheme} = useTheme()
 
-  const handleChange = (e: any) => {
-    setTheme(e.target.checked)
-  }
 
-  return (
-    <label className='switch'>
-        <input type='checkbox' onClick={handleChange}/>
-        <span className='slider'/>
-    </label>
-  )
+    const toggle = (e: any) => {
+        if(e.target.checked) {
+            setTheme("dark")
+        }
+        else{
+            setTheme("light")
+        }
+    }
+
+    useEffect(() => {
+        setTheme("light")
+    })
+
+    return (
+        <label className='switch'>
+            <input type='checkbox' checked={theme === "light" ? false : true} onChange={toggle} />
+            <span className='slider'/>
+        </label>
+    )
 }
 
 export default Switch
