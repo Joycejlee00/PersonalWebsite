@@ -1,14 +1,16 @@
-
+"use client" 
 import React, {useState} from 'react'
 import Link from 'next/link';
+import Switch from './Switch';
 import { useTheme } from 'next-themes';
-import '../styles/navbar.css';
-import { HomeModernIcon, IdentificationIcon, ListBulletIcon } from '@heroicons/react/24/solid';
+import './css/Navbar.css';
+import { ListBulletIcon, HomeIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 
 const icons = {
-    HomeModernIcon,
-    IdentificationIcon,
-    ListBulletIcon
+    HomeIcon,
+    UserCircleIcon,
+    ListBulletIcon,
+    UserGroupIcon
 }
 
 
@@ -21,12 +23,12 @@ interface NavItem {
 const NavbarItem: Array<NavItem> = [
     {
         label: "Home",
-        icon: "HomeModernIcon",
+        icon: "HomeIcon",
         page: "home",
     },
     {
         label: "About",
-        icon: "IdentificationIcon",
+        icon: "UserCircleIcon",
         page: "about",
     },
     {
@@ -34,22 +36,30 @@ const NavbarItem: Array<NavItem> = [
         icon: "ListBulletIcon",
         page: "experience",
     },
+    {
+        label: "Contact",
+        icon: "UserGroupIcon",
+        page: "contact",
+    },
 ]
 
 
 const Navbar = () => {
-
   return <header>
     <div className='navbar'>
-        <div className='flex flex-col'>
-            {NavbarItem.map(({icon}) => {
+        <div className='items-center'>
+            {NavbarItem.map(({icon, label}) => {
                 const Icon = icons[icon]
+                const labels = label
                 return (
-                    <div className=''>
-                        <Icon/>
+                    <div className='icons'>
+                        <Icon title={labels} className="h-6 w-6 text-gray-500"/>
                     </div>
                 )
             })}
+            <div className='toggle'>
+                <Switch/>
+            </div>
         </div>
     </div>
   </header>
