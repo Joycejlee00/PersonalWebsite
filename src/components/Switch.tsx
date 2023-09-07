@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useTheme } from 'next-themes';
 
 const Switch = () => {
 
     const {theme, setTheme} = useTheme()
-    const [darkMode, setDarkMode] = useState(false);
-
+    const [darkMode, setDarkMode] = useState(false)
+    const [active, setActive] = useState(false)
+ 
     //check if the current theme is existing
     const toggle = (e: any) => {
         if(e.target.checked) {
@@ -27,9 +28,18 @@ const Switch = () => {
         setDarkMode(!darkMode)
     }
 
+    useEffect(() => {
+        if(theme === 'light'){
+            setActive(false)
+        }
+        else{
+            setActive(true)
+        }
+    })
+
     return (
         <label className='switch'>
-            <input type='checkbox' checked={theme === "light" ? false : true} onChange={toggle} onClick={changeTheme}/>
+            <input type='checkbox' checked={active} onChange={toggle} onClick={changeTheme}/>
             <span className='slider'/>
         </label>
     )
