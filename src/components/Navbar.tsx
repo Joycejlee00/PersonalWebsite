@@ -2,7 +2,6 @@
 import React, {useState} from 'react'
 import Link from 'next/link';
 import Switch from './Switch';
-import { useTheme } from 'next-themes';
 import { ListBulletIcon, HomeIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 
 const icons = {
@@ -16,7 +15,7 @@ const icons = {
 interface NavItem { 
     label:string
     icon: keyof typeof icons
-    page: string
+    link: string
     idx: number
 }
 
@@ -24,25 +23,25 @@ const NavbarItem: Array<NavItem> = [
     {
         label: "Home",
         icon: "HomeIcon",
-        page: "home",
+        link: "/",
         idx: 1
     },
     {
         label: "About",
         icon: "UserCircleIcon",
-        page: "about",
+        link: "/about",
         idx: 2
     },
     {
         label: "Experience",
         icon: "ListBulletIcon",
-        page: "experience",
+        link: "/experience",
         idx: 3
     },
     {
         label: "Contact",
         icon: "UserGroupIcon",
-        page: "contact",
+        link: "/contact",
         idx: 4
     },
 ]
@@ -52,14 +51,15 @@ const Navbar = () => {
   return <header>
     <div className='navbar'>
         <div className='items-center'>
-            {NavbarItem.map(({icon, label, idx}) => {
+            {NavbarItem.map(({icon, label, idx, link}) => {
                 const Icon = icons[icon]
                 const labels = label
                 const index = idx
+                const href = link
                 return (
-                    <div className='icons' key={idx}>
+                    <Link key={index} href={href} className='icons'>
                         <Icon title={labels} className="h-6 w-6 text-gray-500"/>
-                    </div>
+                    </Link>
                 )
             })}
             <div className='toggle'>
