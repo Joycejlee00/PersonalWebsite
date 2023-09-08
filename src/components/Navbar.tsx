@@ -1,6 +1,8 @@
 "use client" 
-import React, {useState} from 'react'
+import React from 'react'
 import Link from 'next/link';
+import { usePathname } from "next/navigation";
+import { useRouter } from 'next/router'
 import Switch from './Switch';
 import { ListBulletIcon, HomeIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 
@@ -48,17 +50,22 @@ const NavbarItem: Array<NavItem> = [
 
 
 const Navbar = () => {
-  return <header>
+    const router = useRouter()
+
+
+  return (
     <div className='navbar'>
-        <div className='items-center'>
+        <div>
             {NavbarItem.map(({icon, label, idx, link}) => {
                 const Icon = icons[icon]
                 const labels = label
                 const index = idx
                 const href = link
                 return (
-                    <Link key={index} href={href} className='icons'>
-                        <Icon title={labels} className="h-6 w-6 text-gray-500"/>
+                    <Link key={index} href={href}>
+                        <div className={`icons ${router.pathname === link ? 'active' : ''}`}>
+                            <Icon title={labels}/>
+                        </div>
                     </Link>
                 )
             })}
@@ -67,7 +74,7 @@ const Navbar = () => {
             </div>
         </div>
     </div>
-  </header>
+  )
 }
 
 export default Navbar;
