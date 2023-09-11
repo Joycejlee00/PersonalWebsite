@@ -31,14 +31,15 @@ const config: Config = {
         light: {
           ...require('daisyui/src/theming/themes')['[data-theme=light]'],
           '--navBg': '#e8e8e8',
-          '--activeIcn': '#93c5fd',
+          '--activeIcn': '#a5b4fc', //Indigo 300
+          
         },
       },
       {
         business: {
           ...require('daisyui/src/theming/themes')['[data-theme=business]'],
           '--navBg': '#23282E',
-          '--activeIcn': '#3b82f6',
+          '--activeIcn': '#6366f1', //Indigo 500
         },
       },
     ],
