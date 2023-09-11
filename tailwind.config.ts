@@ -8,9 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '976px',
+        xl: '1440px',
+      },
       colors: 
       {
         "navBg": 'hsl(var(--navBg))', // color-variable
+        "activeIcn": 'hsl(var(--activeIcn))'
       }
     },
   },
@@ -24,12 +31,14 @@ const config: Config = {
         light: {
           ...require('daisyui/src/theming/themes')['[data-theme=light]'],
           '--navBg': '#e8e8e8',
+          '--activeIcn': '#93c5fd',
         },
       },
       {
         business: {
           ...require('daisyui/src/theming/themes')['[data-theme=business]'],
           '--navBg': '#23282E',
+          '--activeIcn': '#3b82f6',
         },
       },
     ],

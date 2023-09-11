@@ -1,19 +1,24 @@
 .navbar{
-    width: 2.5rem !important;
-    height: 20rem;
+    width: 3rem;
+    height: 100%;
     background-color: var(--navBg);
-    border-radius: 0.3rem;
+    border-radius: none;
     justify-content: space-evenly;
-    position: absolute;
-    display: flex;
-    top: 25%;
-    left: 10%;
+    position:absolute;
+    display: block;
+    top: 0%;
+    left: 0%;
 }
 
 .icons, .toggle {
-    margin-top: 1.8rem;
+    margin-top: 4.5rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    padding: 20%;
 }
+
+.active {
+    background-color: var(--activeIcn);
+    border-radius: 5%;
+  }

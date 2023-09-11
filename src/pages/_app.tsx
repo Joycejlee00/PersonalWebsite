@@ -5,6 +5,7 @@ import '../styles/globals.css'
 import '../styles/switch.css'
 import '../styles/navbar.css'
 import Head from 'next/head'
+import Navbar from '@/components/Navbar'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,7 +15,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <link rel='icon' type="image/png" href='J-logos_black.png'/>
     </Head>
     <ThemeProvider>
-    <Component {...pageProps} />
+      <Navbar/>
+      <Component {...pageProps} />
   </ThemeProvider>
     </>
   )
