@@ -4,71 +4,21 @@
     background-color: var(--navBg);
     border-radius: none;
     justify-content: space-evenly;
-    position:fixed;
-    display: flex;
+    position:absolute;
+    display: block;
     top: 0%;
     left: 0%;
 }
 
 .icons, .toggle {
-    margin-top: 5.5rem;
+    margin-top: 4.5rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    overflow: auto;
+    text-align: center;
+    transition: all 0.3s ease;
+    padding: 20%;
 }
 
-.icons:hover::before {
-    background-color: #000;
-    position: absolute;
-    margin: auto;
-    height: 3rem;
-    width: 3rem;
-    content: "";
-    left: 0rem;
-    margin-top: -0.7rem;
-    margin-left: auto;
-    align-items: center;
-    display:block;
-
-}
-
-.active:before{
-    position: absolute;
-    margin: auto;
-    height: 3rem;
-    width: 3rem;
-    content: "";
-    left: 0rem;
-    margin-top: -0.7rem;
-    margin-left: auto;
-    align-items: center;
-    display:block;
-    background-color: #c4b5fd;
-    
-    -webkit-transition: .4s;
-    transition: .4s;
+.active {
+    background-color: var(--activeIcn);
     border-radius: 5%;
-}
-
-/* .icons:before {
-    position: absolute;
-    height: 3rem;
-    width: 3rem;
-    content: "";
-    left: 0rem;
-    margin-top: -0.7rem;
-    margin-left: auto;
-    align-items: center;
-    display: block;
-    margin-bottom: auto;
-    background-color: none;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 5%;
-}
-
-.icons:active::before {
-    background-color: gold;
- } */
+  }
