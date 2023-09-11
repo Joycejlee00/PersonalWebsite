@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import '../styles/globals.css'
-import '../styles/switch.css'
 import '../styles/navbar.css'
 import Head from 'next/head'
 import Navbar from '@/components/Navbar'
@@ -17,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider>
       <Navbar/>
       <Component {...pageProps} />
-  </ThemeProvider>
+    </ThemeProvider>
     </>
   )
 }

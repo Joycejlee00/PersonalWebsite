@@ -4,18 +4,19 @@
     background-color: var(--navBg);
     border-radius: none;
     justify-content: space-evenly;
-    position:absolute;
+    position:fixed;
     display: block;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    /* left: 0%; */
 }
 
 .icons, .toggle {
     margin-top: 4.5rem;
     display: block;
+     margin-inline: 5%;
     text-align: center;
-    transition: all 0.3s ease;
-    padding: 20%;
+    transition: all 0.1s ease;
+    padding: 23%;
 }
 
 .active {
