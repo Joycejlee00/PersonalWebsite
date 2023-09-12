@@ -48,15 +48,13 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div>
-                {NavbarItem.map(({icon, label, link}) => {
-                    const Icon = icons[icon]
-                    const labels = label
-                    const href = link
+                {NavbarItem.map((navItem) => {
+                    const Icon = icons[navItem.icon]
                     return (
                         
-                        <Link key={link} href={href}>
-                            <div className={`icons ${router.pathname === link ? 'active' : ''}`}>
-                                <Icon title={labels}/>
+                        <Link key={navItem.link} href={navItem.link}>
+                            <div className={`icons ${router.pathname === navItem.link ? 'active' : ''}`}>
+                                <Icon title={navItem.label}/>
                             </div>
                         </Link>
                     )

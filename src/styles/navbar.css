@@ -13,11 +13,22 @@
 .icons, .toggle {
     margin-top: 4.5rem;
     display: block;
-     margin-inline: 5%;
+    margin-inline: 5%;
     text-align: center;
     transition: all 0.1s ease;
     padding: 23%;
 }
+
+/* .icons:hover {
+    animation: blink 1.5s infinite .5s;
+    border-radius: 5%;
+}
+
+@keyframes blink {
+    0% {background-color: none;}
+    50% {background-color: var(--activeIcn);}
+    100% {background-color: none;}
+} */
 
 .active {
     background-color: var(--activeIcn);
