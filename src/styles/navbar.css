@@ -7,7 +7,7 @@
     position:fixed;
     display: block;
     top: 0;
-    /* left: 0%; */
+    z-index: 1;
 }
 
 .icons, .toggle {
@@ -19,18 +19,7 @@
     padding: 23%;
 }
 
-/* .icons:hover {
-    animation: blink 1.5s infinite .5s;
-    border-radius: 5%;
-}
-
-@keyframes blink {
-    0% {background-color: none;}
-    50% {background-color: var(--activeIcn);}
-    100% {background-color: none;}
-} */
-
-.active {
+/* .active {
     background-color: var(--activeIcn);
     border-radius: 5%;
-  }
+  } */
