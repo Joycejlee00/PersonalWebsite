@@ -1,25 +1,48 @@
-.navbar{
+.navbar {
     width: 3rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     background-color: var(--navBg);
-    border-radius: none;
-    justify-content: space-evenly;
-    position:fixed;
-    display: block;
-    top: 0;
+    align-items: center;
+    backdrop-filter: blur(5px);
     z-index: 1;
 }
 
-.icons, .toggle {
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    justify-content: flex-start;
+    z-index: 100;
+}
+
+.icons, .themeChange {
     margin-top: 4.5rem;
     display: block;
     margin-inline: 5%;
+    color: var(--activeIcn);
     text-align: center;
     transition: all 0.1s ease;
-    padding: 23%;
 }
 
-/* .active {
-    background-color: var(--activeIcn);
-    border-radius: 5%;
-  } */
+.buttons {
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.125rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+}
+
+    
+.bubble {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    height: 100%;
+    background-color: rgb(148, 163, 184, .5);
+    border-radius: 0.3rem;
+    z-index: -10;
+}

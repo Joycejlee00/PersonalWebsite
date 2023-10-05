@@ -1,0 +1,17 @@
+.card {
+    border-top-left-radius: 0%;
+    margin-top: 2rem;
+}
+.card::before {
+content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid white;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  border-bottom: 10px solid transparent;
+  transform: rotate(-90deg);
+  left: 0;
+  top: -1.2rem;
+}

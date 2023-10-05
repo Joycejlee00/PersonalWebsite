@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useTheme } from 'next-themes';
-import {LightBulbIcon} from '@heroicons/react/24/solid';
+import { HiLightBulb } from "react-icons/hi";
 
 const ThemeSwitcher = () => {
 
@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
 
         if(currentTheme === 'business'){
             return (
-                <LightBulbIcon
+                <HiLightBulb
                 role='button'
                 fill='currentColor' 
                 onClick={() => setTheme('light')}
@@ -29,7 +29,7 @@ const ThemeSwitcher = () => {
         }
         else{
             return (
-                <LightBulbIcon
+                <HiLightBulb
                 role='button'
                 fill='currentColor'
                 onClick={() => setTheme('business')}

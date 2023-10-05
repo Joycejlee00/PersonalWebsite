@@ -3,8 +3,8 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    // './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    // './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -17,7 +17,7 @@ const config: Config = {
       colors: 
       {
         "navBg": 'hsl(var(--navBg))', // color-variable
-        "activeIcn": 'hsl(var(--activeIcn))'
+        "icn": 'hsl(var(--activeIcn))'
       }
     },
   },
@@ -30,16 +30,17 @@ const config: Config = {
       {
         light: {
           ...require('daisyui/src/theming/themes')['[data-theme=light]'],
-          '--navBg': '#e8e8e8',
-          '--activeIcn': '#a5b4fc', //Indigo 300
+          "base-100": "#f1f1f1",
+          '--navBg': 'rgba(255,255,255, .4)',
+          '--icn': 'rgb(51 65 85);', 
           
         },
       },
       {
         business: {
           ...require('daisyui/src/theming/themes')['[data-theme=business]'],
-          '--navBg': '#23282E',
-          '--activeIcn': '#6366f1', //Indigo 500
+          '--navBg': 'rgba(35,40,46, .4)',
+          '--icn': 'rgb(255 255 255)', 
         },
       },
     ],
