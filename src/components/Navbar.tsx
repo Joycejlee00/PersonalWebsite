@@ -32,7 +32,7 @@ const navItems = [
   export default function NavBar() {
     let pathname = useRouter().pathname || "/";
   
-    const [hover, setHovered] = useState(pathname);
+    const [activeItem, setActiveItem] = useState(pathname);
   
     return (
       <div className="navbar">
@@ -40,38 +40,32 @@ const navItems = [
           {navItems.map((item) => {
             const isActive = item.path === pathname;
             return (
+
               <Link
                 key={item.path}
-                className={`buttons ${
-                  isActive ? "" : ""
-                }`}
+                onClick={() => setActiveItem(item.path)}
                 href={item.path}
-                onMouseOver={() => setHovered(item.path)}
-                onMouseLeave={() => setHovered(pathname)}
+                className={`${isActive ? "" : "hover:text-zinc-600"} activeItem`}
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                }}
               >
-                <item.icon size={22} className={'icons'}/>
-                {item.path == hover && (
-                  <motion.div
+                {activeItem === item.path && (
+                  <motion.span
+                    layoutId="bubble"
                     className="bubble"
-                    layoutId="navbar"
-                    aria-hidden="true"
-                    style={{
-                        width: "100%",
-                        height: "37%",
-                    }}
-                    transition={{
-                      type: "just",
-                      duration: 0.4,
-                    }}
+                    style={{ borderRadius: 5, left: 40}}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
+                <item.icon size={24} classname={'icons'}/>
               </Link>
             );
           })}
 
-        <div className='themeChange'>
-            <ThemeSwitcher/>
-        </div>
+          <div className='themeChange'>
+            <ThemeSwitcher />
+          </div>
         </nav>
       </div>
     );

@@ -7,42 +7,52 @@
     background-color: var(--navBg);
     align-items: center;
     backdrop-filter: blur(5px);
-    z-index: 1;
 }
 
 .items {
+    margin-top: 4.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 5rem;
     position: relative;
-    justify-content: flex-start;
-    z-index: 100;
+    justify-content: space-evenly;
 }
 
-.icons, .themeChange {
-    margin-top: 4.5rem;
-    display: block;
+.activeItem {
     margin-inline: 5%;
-    color: var(--activeIcn);
+    position: relative;
+    padding: 0.5rem; 
+    color: var(--icn); 
+    background-color: none;
+    transition: 0.3s ease-in;
+    display: inline-flex;
+}
+
+.icons {
+    position: relative;
+    z-index: 10;
+}
+
+.themeChange {
+    margin-top: 4rem;
+    display: flex;
+    margin-inline: 5%;
     text-align: center;
     transition: all 0.1s ease;
 }
 
 .buttons {
-    padding: 0.5rem 0.6rem;
-    border-radius: 0.125rem;
     position: relative;
     text-decoration: none;
     transition: all 0.3s ease-in;
 }
 
-    
 .bubble {
     position: absolute;
-    bottom: 0rem;
-    left: 0;
-    height: 100%;
-    background-color: rgb(148, 163, 184, .5);
-    border-radius: 0.3rem;
-    z-index: -10;
+    width: 10%;
+    display: flex;
+    inset: 0;
+    z-index: 1;
+    background-color: var(--icn); 
+    mix-blend-mode: normal;
 }

@@ -17,7 +17,9 @@ const config: Config = {
       colors: 
       {
         "navBg": 'hsl(var(--navBg))', // color-variable
-        "icn": 'hsl(var(--activeIcn))'
+        "icnBubble": 'hsl(var(--icnBubble))',
+        "activeColor":'hsl(var(--activeColor))',
+        "icn": 'hsl(var(--icn))',
       }
     },
   },
@@ -32,7 +34,8 @@ const config: Config = {
           ...require('daisyui/src/theming/themes')['[data-theme=light]'],
           "base-100": "#f1f1f1",
           '--navBg': 'rgba(255,255,255, .4)',
-          '--icn': 'rgb(51 65 85);', 
+          '--icnBubble': 'rgba(0, 0, 0, .8);', 
+          '--icn': 'black',
           
         },
       },
@@ -40,7 +43,8 @@ const config: Config = {
         business: {
           ...require('daisyui/src/theming/themes')['[data-theme=business]'],
           '--navBg': 'rgba(35,40,46, .4)',
-          '--icn': 'rgb(255 255 255)', 
+          '--icnBubble': 'rgba(255, 255, 255, .8)', 
+          '--icn': 'white',
         },
       },
     ],
