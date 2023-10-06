@@ -45,7 +45,7 @@ const navItems = [
                 key={item.path}
                 onClick={() => setActiveItem(item.path)}
                 href={item.path}
-                className={`${isActive ? "" : "hover:text-zinc-600"} activeItem`}
+                className={`${isActive ? "" : "hover:text-zinc-600" } activeItem`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
