@@ -10,12 +10,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className=''>
-      <h1 className={oleo_script.className}>Hello World</h1>
+    <main>
+      <section className={oleo_script.className}>Hello World</section>
       <div className="card lg:card-side bg-white shadow-xl">
         <div className="card-body">
-          <h2 className="card-title">New album is released!</h2>
-          <p>Click the button to listen on Spotiwhy app.</p>
+          <h2 className="card-title">Welcome ~ </h2>
+          <p>Click the button to listen on Spotiwhy app. Click the button to listen on Spotiwhy app. Click the button to listen on Spotiwhy app. Click the button to listen on Spotiwhy app.</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary">Listen</button>
           </div>
