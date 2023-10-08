@@ -1,73 +1,72 @@
 "use client" 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import ThemeSwitcher from './ThemeSwitcher';
-import { ListBulletIcon, HomeIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/solid';
+import { HiHome, HiUserCircle, HiViewList, HiInformationCircle} from "react-icons/hi";
+import { motion } from "framer-motion";
 
-const icons = {
-    HomeIcon,
-    UserCircleIcon,
-    ListBulletIcon,
-    UserGroupIcon
-}
-
-
-interface NavItem { 
-    label:string
-    icon: keyof typeof icons
-    link: string
-}
-
-const NavbarItem: Array<NavItem> = [
+const navItems = [
     {
-        label: "Home",
-        icon: "HomeIcon",
-        link: "/",
+      path: "/",
+      icon: HiHome,
+      name: "Home",
     },
     {
-        label: "About",
-        icon: "UserCircleIcon",
-        link: "/about",
+      path: "/about",
+      icon: HiUserCircle,
+      name: "About",
     },
     {
-        label: "Experience",
-        icon: "ListBulletIcon",
-        link: "/experience",
+      path: "/experience",
+      icon: HiViewList,
+      name: "Experience",
     },
     {
-        label: "Contact",
-        icon: "UserGroupIcon",
-        link: "/contact",
+      path: "/contact",
+      icon: HiInformationCircle,
+      name: "Contact",
     },
-]
-
-const Navbar = () => {
-    
-    const router = useRouter()
+  ];
+  
+  export default function NavBar() {
+    let pathname = useRouter().pathname || "/";
+  
+    const [activeItem, setActiveItem] = useState(pathname);
+  
     return (
-        <div className='navbar'>
-            <div>
-                {NavbarItem.map(({icon, label, link}) => {
-                    const Icon = icons[icon]
-                    const labels = label
-                    const href = link
-                    return (
-                        
-                        <Link key={link} href={href}>
-                            <div className={`icons ${router.pathname === link ? 'active' : ''}`}>
-                                <Icon title={labels}/>
-                            </div>
-                        </Link>
-                    )
-                })}
-                
-                <div className='toggle'>
-                    <ThemeSwitcher/>
-                </div>
-            </div>
-        </div>
-    )
-}
+      <div className="navbar">
+        <nav className="items">
+          {navItems.map((item) => {
+            const isActive = item.path === pathname;
+            return (
+              <Link
+                key={item.path}
+                onClick={() => setActiveItem(item.path)}
+                href={item.path}
+                className={`${isActive ? "" : "hover:text-zinc-600 tooltip tooltip-right" } activeItem` }
+                data-tip={item.name}
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                }}
+              >
+                {activeItem === item.path && (
+                  <motion.span
+                    layoutId="bubble"
+                    className="bubble"
+                    style={{ borderRadius: 5, left: 40}}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <item.icon size={24} classname={'icons'}/>
+              </Link>
+            );
+          })}
 
-export default Navbar;
+          <div className='themeChange'>
+            <ThemeSwitcher />
+          </div>
+        </nav>
+      </div>
+    );
+  }
