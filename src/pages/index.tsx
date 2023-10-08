@@ -1,9 +1,22 @@
-import { Inter, Oleo_Script } from 'next/font/google'
+import { Inter, DM_Serif_Display, Cormorant_Garamond, Work_Sans} from 'next/font/google'
 import Typewriter from 'typewriter-effect';
-import { Footer } from '@/components/Footer';
+import { Footer } from '@/components/Footer'
+import { Avatar } from '@/components/Avatar';
 
-const oleo_script = Oleo_Script({
+const dmSerifDisplay = DM_Serif_Display({
+  weight: '400',
+  style: ['normal'],
+  subsets: ['latin']
+})
+
+const cormorantGaramond = Cormorant_Garamond({
   weight: '700',
+  style: ['normal'],
+  subsets: ['latin']
+})
+
+const workSans = Work_Sans({
+  weight: '400',
   style: ['normal'],
   subsets: ['latin']
 })
@@ -13,25 +26,26 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className='main'>
-      <h2 className={`typewriter ${oleo_script.className}`}>
-      <Typewriter
-        onInit={(typewriter) => {
-          typewriter.typeString('Hello World!')
-            .pauseFor(2500)
-            .start();
-        }}
-      />
-      </h2>
-      <div className="card lg:card-side bg-white shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">Welcome ~ </h2>
-          <p>Click the button to listen on Spotiwhy app. Click the button to listen on Spotiwhy app. Click the button to listen on Spotiwhy app. Click the button to listen on Spotiwhy app.</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Listen</button>
+        <h2 className={`typewriter ${dmSerifDisplay.className}`}>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter.typeString('Hello World!')
+              .pauseFor(2500)
+              .start();
+          }}
+        />
+        </h2>
+        <div className="card lg:card-side">
+          <div className="card-body">
+            <Avatar/>
+            <div className='text'>
+              <h2 className={`text-[2.5rem] m-0 font-extrabold ${cormorantGaramond.className}`}>Joyce Lee</h2>
+              <p className={`${workSans.className}`}> <em>Software Developer</em></p>
+              <p className={`${workSans.className}`}>Welcome to my personal website!</p>
+            </div>
           </div>
         </div>
-      </div>
-      <Footer/>
+        <Footer/>
     </main>
   )
 }

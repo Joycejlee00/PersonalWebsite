@@ -20,6 +20,7 @@ const config: Config = {
         "icnBubble": 'hsl(var(--icnBubble))',
         "activeColor":'hsl(var(--activeColor))',
         "icn": 'hsl(var(--icn))',
+        "txBbble": 'hsl(var(--txBbble))',
       }
     },
   },
@@ -36,6 +37,8 @@ const config: Config = {
           '--navBg': 'rgba(255,255,255, .4)',
           '--icnBubble': 'rgba(0, 0, 0, .8);', 
           '--icn': 'black',
+          '--txBbble': '#FFFFFF',
+
           
         },
       },
@@ -45,6 +48,7 @@ const config: Config = {
           '--navBg': 'rgba(35,40,46, .4)',
           '--icnBubble': 'rgba(255, 255, 255, .8)', 
           '--icn': 'white',
+          '--txBbble': 'rgb(23 23 23);',
         },
       },
     ],

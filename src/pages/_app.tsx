@@ -5,8 +5,7 @@ import '../styles/globals.css'
 import '../styles/navbar.css'
 import '../styles/card.css'
 import Head from 'next/head'
-import Layout from '@/components/Layout';
-
+import Layout from '@/components/Layout'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -14,13 +13,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <title>Joyce Lee</title>
       <link rel='icon' type="image/png" href='J-logos_black.png'/>
     </Head>
-    <ThemeProvider>
-      <div>
+    <ThemeProvider disableTransitionOnChange>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </div>
     </ThemeProvider>
-    </>
+    </> 
   )
 }
