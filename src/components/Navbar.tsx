@@ -40,12 +40,12 @@ const navItems = [
           {navItems.map((item) => {
             const isActive = item.path === pathname;
             return (
-
               <Link
                 key={item.path}
                 onClick={() => setActiveItem(item.path)}
                 href={item.path}
-                className={`${isActive ? "" : "hover:text-zinc-600" } activeItem`}
+                className={`${isActive ? "" : "hover:text-zinc-600 tooltip tooltip-right" } activeItem` }
+                data-tip={item.name}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}

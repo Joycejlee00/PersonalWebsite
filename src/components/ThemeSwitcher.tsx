@@ -21,6 +21,7 @@ const ThemeSwitcher = () => {
         if(currentTheme === 'business'){
             return (
                 <HiLightBulb
+                className='m-2'
                 size='24'
                 role='button'
                 fill='currentColor' 
@@ -31,6 +32,7 @@ const ThemeSwitcher = () => {
         else{
             return (
                 <HiLightBulb
+                className='m-2'
                 size='24'
                 role='button'
                 fill='currentColor'

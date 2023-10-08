@@ -1,4 +1,4 @@
-.main {
+main {
   justify-content: center; 
   position: absolute;
   top: 48%;
@@ -11,6 +11,13 @@
   display: grid;
   align-items: center; 
   grid-template-columns: 1fr 1fr;
+}
+
+.body {
+  display: block;
+  align-items: left;
+  margin-top: 3.5%;
+  margin-left: 3.5%;
 }
 
 .typewriter{

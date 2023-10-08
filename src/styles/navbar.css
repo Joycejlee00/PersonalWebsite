@@ -18,6 +18,7 @@
     align-items:last baseline;
 }
 
+
 .activeItem {
     margin-inline: 5%;
     position: relative;
@@ -38,7 +39,6 @@
 .themeChange {
     margin-top: 4rem;
     display: flex;
-    margin-inline: 5%;
     text-align: center;
     transition: all 0.1s ease;
 }
