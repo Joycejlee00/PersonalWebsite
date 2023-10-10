@@ -37,8 +37,8 @@ export const Card = (props : any) => {
         }}
         />
         </h2>
-        {current === '/' ? 
-          <div className="card lg:card-side">
+        {current === '/' &&
+          (<div className="card lg:card-side">
             <div className="card-body">
                 <Avatar/>
                 <div className='text'>
@@ -47,18 +47,21 @@ export const Card = (props : any) => {
                 <p className={`${workSans.className}`}>{props.p2}</p>
                 </div>
             </div>
-          </div> 
-          :
-          <div className="card lg:card-side">
-            <div className="body">
-                <div className='text'>
-                <h2 className={`text-[2.5rem] m-0 font-extrabold ${cormorantGaramond.className}`}>{props.h2}</h2>
-                <p className={`text-[0.8rem] ${workSans.className}`}>{props.p1}</p>
-                <p className={`text-[0.8rem] ${workSans.className}`}>{props.p2}</p>
-                </div>
-            </div>
-          </div>
+          </div>)
         }
+        {
+          current === '/about' && (
+            <div className='card lg:card-side'>
+              <div className='body'>
+                <div className='text'>
+                  <h2 className={`text-[2.5rem] m-0 font-extrabold ${cormorantGaramond.className}`}>{props.h2}</h2>
+                  <p className={`text-[0.8rem] m-0 ${workSans.className}`}>{props.p1} <br/>{props.p2}  <a className="link link-info" href="https://www.buffalo.edu/">University at Buffalo</a> {props.p3} <br/> <br/> {props.p4}</p>
+                </div>
+              </div>
+            </div>
+          )
+        }
+
         <Footer/>
     </main>
   )
