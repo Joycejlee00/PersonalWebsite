@@ -70,6 +70,7 @@ main {
   font-size: medium;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-bottom: 1rem;
 }
 
 .card:before {
