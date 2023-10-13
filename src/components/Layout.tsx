@@ -13,7 +13,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <title>
         {current === "/" ? "Joyce Lee" : `${current.charAt(1).toUpperCase() + current.slice(2)}`}
         </title>
-      <link rel='icon' type="image/png" href='J-logos_black.png'/>
+      <link rel='icon' type="image/png" href='favicon.ico'/>
     </Head>
     <NavBar/>
     <div className="bg-none flex-1 p-4">

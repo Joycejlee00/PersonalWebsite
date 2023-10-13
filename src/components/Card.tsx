@@ -41,12 +41,12 @@ export const Card = (props : any) => {
         </h2>
         {current === '/' &&
           (<div className="card lg:card-side ">
-            <div className="card-body">
+            <div className={`card-body flex items-center md:flex-row ml:10 md:justify`}>
                 <Avatar/>
-                <div className='text'>
-                <h2 className={`text-[2.5rem] m-0 font-extrabold ${cormorantGaramond.className}`}>{props.h2}</h2>
-                <p className={`${workSans.className}`}> <em>{props.p1}</em></p>
-                <p className={`${workSans.className}`}>{props.p2}</p>
+                <div className='flex flex-col'>
+                <h2 className={`text-[2.1rem] m-0 font-extrabold text-center md:text-left px-10 ${cormorantGaramond.className}`}> {props.h2} </h2>
+                <p className={`text-[0.7rem] ml:10 text-center md:text-left px-10 ${workSans.className}`}> <em>{props.p1}</em></p>
+                <p className={`text-[0.7rem] text-center md:text-left px-10 ${workSans.className}`}>{props.p2}</p>
                 </div>
             </div>
           </div>)
@@ -56,8 +56,8 @@ export const Card = (props : any) => {
             <div className='card lg:card-side'>
               <div className='body'>
                 <div className='text'>
-                  <h2 className={`text-[2.5rem] m-0 font-extrabold ${cormorantGaramond.className}`}>{props.h2}</h2>
-                  <p className={`text-[0.78rem] m-0 ${workSans.className}`}>{props.p1} <br/> <br/> {props.p2} <br/> <br/> {props.p3} <br/> <br/> {props.p8} <br/> <br/> {props.p4} <br/> <br/> {props.p5} <a className='link link-info' href={'/contact'}>here</a>. <br/> {props.p6} <br/> <br/> {props.p7} </p>
+                  <h2 className={`text-[2.1rem] font-extrabold ${cormorantGaramond.className}`}>{props.h2}</h2>
+                  <p className={`text-[0.7rem] ${workSans.className}`}>{props.p1} <br/> <br/> {props.p2} <br/> <br/> {props.p3} <br/> <br/> {props.p8} <br/> <br/> {props.p4} <br/> <br/> {props.p5} {props.p6} <br/> <br/> {props.p7} </p>
                 </div>
               </div>
             </div>

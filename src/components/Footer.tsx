@@ -42,6 +42,7 @@ export const Footer = () => {
           className='tooltip tooltip-top'
           data-tip={contact.name}
           target="_blank"
+          title={contact.name}
           rel="noopener noreferrer"
           >
             <contact.icon size={16}/>

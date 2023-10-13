@@ -5,10 +5,11 @@ export const Avatar = () => {
   return (
     <div className="img">
       <Image
-      className='img'
+      className='rounded-full'
       src="/me.jpg"
-      width={700}
-      height={700}
+      layout="responsive"
+      width={200}
+      height={200}
       quality={100}
       alt="This is an image"
       />
