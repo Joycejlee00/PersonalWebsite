@@ -40,7 +40,7 @@ export const Card = (props : any) => {
         />
         </h2>
         {current === '/' &&
-          (<div className="card lg:card-side">
+          (<div className="card lg:card-side ">
             <div className="card-body">
                 <Avatar/>
                 <div className='text'>
@@ -76,8 +76,8 @@ export const Card = (props : any) => {
                         </svg>
                       </div>
                       <div>
-                        <p className="expText"><em>{props.p1}</em> • <b>Cognizant Technology Solutions</b></p>
-                        <p className="expText">{props.p3} <br/> {props.p4}</p>
+                        <p className={`expText ${workSans.className}`}><em>{props.p1}</em> • <b>Cognizant Technology Solutions</b></p>
+                        <p className={`expText ${workSans.className}`}>{props.p3} <br/> {props.p4}</p>
                         <ul className='flex flex-wrap'>
                           <Buttons value={'React'}/>
                           <Buttons value={'CSS'}/>

@@ -33,7 +33,7 @@ export const Footer = () => {
       <aside>
         <p> @ Joyce Lee</p>
       </aside>
-      <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <nav className="grid-flow-col gap-2 justify-self-end">
         {contacts.map((contact) => {
         return (
           <a
