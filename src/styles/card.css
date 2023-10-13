@@ -67,12 +67,17 @@ main {
 
 .text {
   color: var(--icn);
-  font-size: medium;
+  font-size: small;
   overflow-x: hidden;
   overflow-y: auto;
   padding-bottom: 1rem;
 }
 
+.expText {
+  color: var(--icn);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
 .card:before {
   content: '';
   position: absolute;

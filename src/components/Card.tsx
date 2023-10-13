@@ -4,6 +4,8 @@ import Typewriter from 'typewriter-effect';
 import { Avatar } from '@/components/Avatar';
 import { DM_Serif_Display, Cormorant_Garamond, Work_Sans} from 'next/font/google'
 import { useRouter } from "next/router";
+import { Buttons } from './Buttons';
+import { Info } from './Info';
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: '400',
@@ -22,6 +24,7 @@ const workSans = Work_Sans({
   style: ['normal'],
   subsets: ['latin']
 })
+
 export const Card = (props : any) => {
 
   const current = useRouter().pathname;
@@ -65,21 +68,39 @@ export const Card = (props : any) => {
           current === '/experience' && (
             <div className='card lg:card-side'>
               <div className='body'>
-                <div className='text'>
-                  <p className={`text-[0.7rem] text-left m-0 ${workSans.className}`}><em>{props.p1}</em> <span className='m-0 auto '>{props.h3one}</span></p>
-                  <p className={`text-[0.7rem] m-0 ${workSans.className}`}>{props.p2} <br/></p>
-                  <ul className='list-disc pl-3'>
-                    <li className={`text-[0.7rem] ${workSans.className}`}>Contribute within a team of 10 to create a web application to display a dashboard with client project metrics
-across the entire company</li>
-                    <li className={`text-[0.7rem] ${workSans.className}`}>Developed a responsive Android application in Kotlin that leverages MVVM Architecture to recommend certain
-food recipes based on the user’s text input</li>
+                <div className="w-90">
+                  <ul>
+                    <li className="relative flex items-baseline gap-6 pb-5">
+                      <div className="before:absolute before:left-[5.5px] before:h-full before:w-[1px] before:bg-gray-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" className="bi bi-circle-fill fill-gray-600" viewBox="0 0 16 16">
+                          <circle cx="8" cy="8" r="8" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="expText"><em>{props.p1}</em> • <b>Cognizant Technology Solutions</b></p>
+                        <p className="expText">{props.p3} <br/> {props.p4}</p>
+                        <ul className='flex flex-wrap'>
+                          <Buttons value={'React'}/>
+                          <Buttons value={'CSS'}/>
+                          <Buttons value={'Kotlin'}/>
+                          <Buttons value={'Spring Boot'}/>
+                          <Buttons value={'Java'}/>
+                        </ul>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           )
         }
-
+        {
+          current === '/contact' && (
+            <div>
+              <Info/>
+            </div>
+          )
+        }
         <Footer/>
     </main>
   )
