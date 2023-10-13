@@ -29,6 +29,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "daisyui": "^3.6.5"
+    "daisyui": "^3.6.5",
+    "tailwind-scrollbar": "^3.0.5"
   }
 }

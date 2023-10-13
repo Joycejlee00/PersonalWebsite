@@ -22,11 +22,6 @@ const navItems = [
       icon: HiViewList,
       name: "Experience",
     },
-    {
-      path: "/contact",
-      icon: HiInformationCircle,
-      name: "Contact",
-    },
   ];
   
   export default function NavBar() {
@@ -44,7 +39,7 @@ const navItems = [
                 key={item.path}
                 onClick={() => setActiveItem(item.path)}
                 href={item.path}
-                className={`${isActive ? "" : "hover:text-zinc-600 tooltip tooltip-right" } activeItem` }
+                className={`${isActive ? "" : "hover:text-zinc-600 lg:tooltip lg:tooltip-right" } activeItem` }
                 data-tip={item.name}
                 style={{
                   WebkitTapHighlightColor: "transparent",
