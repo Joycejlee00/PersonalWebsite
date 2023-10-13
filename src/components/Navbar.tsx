@@ -22,11 +22,6 @@ const navItems = [
       icon: HiViewList,
       name: "Experience",
     },
-    {
-      path: "/contact",
-      icon: HiInformationCircle,
-      name: "Contact",
-    },
   ];
   
   export default function NavBar() {

@@ -78,16 +78,18 @@ main {
   font-size: 0.8rem;
   margin-top: 1rem;
 }
-.card:before {
+
+.card::before {
   content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 100%;
-  left: 2em; 
-  border: 1rem solid transparent;
-  border-top: none;
-  border-bottom-color: var(--txBbble);
+	position: fixed;
+	width: 0rem;
+	height: 0rem;
+	top: 4rem;
+  z-index: 100;
+	left: 1.5em;
+	border: .75rem solid transparent;
+	border-top: none;
+	border-bottom-color: var(--txBbble);
 }
 
 .footer {

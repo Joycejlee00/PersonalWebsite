@@ -5,7 +5,6 @@ import { Avatar } from '@/components/Avatar';
 import { DM_Serif_Display, Cormorant_Garamond, Work_Sans} from 'next/font/google'
 import { useRouter } from "next/router";
 import { Buttons } from './Buttons';
-import { Info } from './Info';
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: '400',
@@ -91,13 +90,6 @@ export const Card = (props : any) => {
                   </ul>
                 </div>
               </div>
-            </div>
-          )
-        }
-        {
-          current === '/contact' && (
-            <div>
-              <Info/>
             </div>
           )
         }
