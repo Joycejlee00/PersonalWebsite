@@ -14,7 +14,7 @@ const contacts = [
       name: "LinkedIn",
     },
     {
-      path: "/Joyce_Lee_Resume.pdf",
+      path: "/Joyce-Lee-Resume.pdf",
       icon: BsFileTextFill,
       name: "Resume",
     },
