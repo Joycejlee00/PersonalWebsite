@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const contacts = [
     {
-      path: "https://github.com/Joycejlee00",
+      path: "https://github.com/jxyce0909",
       icon: BsGithub,
       name: "Github",
     },
