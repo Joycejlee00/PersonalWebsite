@@ -53,7 +53,7 @@ const navItems = [
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-                <item.icon size={24} classname={'icons'}/>
+                <item.icon size={24} className={'icons'}/>
               </Link>
             );
           })}
